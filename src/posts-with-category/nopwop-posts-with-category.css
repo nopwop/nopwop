@@ -1,0 +1,25 @@
+/* css */
+
+.npwp-post-container {
+  border-style: dashed;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: lightslategray;
+  padding: 10px;
+}
+
+.npwp-post-container .npwp-err-msg {
+  color: red;
+}
+
+.npwp-post-container .npwp-post-card {
+  display: flex;
+}
+
+.npwp-post-container .npwp-col-2 {
+  margin: 8px 8px;
+}
+
+.npwp-post-container .npwp-excerpt {
+  font-size: 70%;
+}
