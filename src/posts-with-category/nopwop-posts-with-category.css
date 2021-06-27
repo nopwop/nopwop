@@ -66,3 +66,6 @@ ul.nopwop-post-list  {
   margin-bottom: 4px;
 }
 
+.npwp-err-msg {
+  color: red;
+}
