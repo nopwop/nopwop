@@ -14,3 +14,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+### How to build with webpack
+
+Try
+> npx webpack --config src/post-list/webpack.config.js --watch
+
+Need to customise gulpfile.js so that build script can be switched over dev verion or prod verion.
