@@ -1,8 +1,4 @@
-import { WpApiWrapper } from '../common/wpapi'
-
-export function getPostListByCategory(scr) {
-  const api = new WpApiWrapper()
-    
+export function getPostListByCategory(api, scr) {
   return new Promise(function(resolve, reject) {
     let n = scr.getAttribute('name')
     let slg = scr.getAttribute('slug')

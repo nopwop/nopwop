@@ -1,10 +1,8 @@
-import { WpApiWrapper } from '../common/wpapi'
-
 const related_tags_max = 3
 const related_categories_max = 3
 const related_max = 9
 
-const api = new WpApiWrapper()
+let api = null
 
 function getCurrentPostId() {
   var el = document.getElementsByTagName('body')
@@ -115,7 +113,8 @@ function getPostRelatedTo(post) {
   })
 }
 
-export function getPostListRelated(scr) {
+export function getPostListRelated(recieved_api, scr) {
+  api = recieved_api
   return new Promise(function(resolve, reject) {
     api.postById(getCurrentPostId()).then((currentPost) => {
       return getPostRelatedTo(currentPost)

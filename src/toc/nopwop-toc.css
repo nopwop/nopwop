@@ -1,0 +1,27 @@
+
+.nopwop-toc-box {
+    color: #592202;
+
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #AAAAAA;
+    padding-left: 0.75em;
+
+    font-size: 0.9em;
+    margin-bottom: 34px;
+}
+
+.nopwop-toc-box h2 {
+    font-size: 1.3em;
+}
+
+h1.nopwop-toc-anchor,
+h2.nopwop-toc-anchor,
+h3.nopwop-toc-anchor,
+h4.nopwop-toc-anchor,
+h5.nopwop-toc-anchor,
+h6.nopwop-toc-anchor {
+    margin-top: -130px;
+    padding-top: 130px;
+}

@@ -1,8 +1,4 @@
-import { WpApiWrapper } from '../common/wpapi'
-
-export function getPageListWithParent(scr) {
-  const api = new WpApiWrapper()
-
+export function getPageListWithParent(api, scr) {
   return new Promise(function(resolve, reject) {
     let n = scr.getAttribute('name')
     let slg = scr.getAttribute('slug')

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='jp'>
+  <head>
+    <meta charset='utf-8'>
+    <title>nopwop - test dashboard!</title>
+    <!--
+    <link rel='stylesheet' href='style.css'>
+    -->
+    
+    <!-- mocha framework -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.4/chai.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.css">
+
+
+
+  </head>
+  <body>
+    <h1>
+        Main tests
+    </h1>
+    <!-- page content -->
+    <div id='mocha' style='margin: 0px'></div>
+
+    <!-- test dashboard js -->
+    <script src='./build/dashboard.bundle.js'></script>
+
+    <h1>
+        Other tests
+    </h1>
+    <ul>
+        <li>
+            <a href='./script-traverser/script-traverser-test.html'>script traverser</a>
+        </li>
+    </ul>
+  </body>
+
+</html>

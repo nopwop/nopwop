@@ -9,6 +9,7 @@ import { getPostListByCategory } from './post-list-by-category'
 import { getPostListByTag } from './post-list-by-tag'
 import { getPageListWithParent } from './page-list-with-parent'
 import { getPostListRelated } from './post-list-related'
+import { WpApiWrapper } from '../common/wpapi'
 
 (function() {
   const scriptName = 'nopwop-post-list'
@@ -29,17 +30,18 @@ import { getPostListRelated } from './post-list-related'
   }
 
   function selectHandlerType(scr) {
+    let api = new WpApiWrapper()
     let type = scr.getAttribute('listtype')
     if (type == 'child-pages') {
-      return getPageListWithParent(scr)
+      return getPageListWithParent(api, scr)
     } else if (type == 'related-posts') {
-      return getPostListRelated(scr)
+      return getPostListRelated(api, scr)
     } else if (type == 'tag-posts') {
-      return getPostListByTag(scr)
+      return getPostListByTag(api, scr)
     } else if (type == 'category-posts') {
-      return getPostListByCategory(scr)
+      return getPostListByCategory(api, scr)
     } else {
-      return getPostListByCategory(scr)
+      return getPostListByCategory(api, scr)
     }
   }
 
