@@ -1,9 +1,13 @@
-(function(global) {
-  const scriptName = 'nopwop-include-page'
+import {ScriptTraverser} from '../common/script-traverser'
 
-  if ('nopwopIncludePage' in global) {
-    return;
-  }
+(function(global) {
+  let ctx = ScriptTraverser('nopwop-include-page', 'nopwopIncludePage')
+  .init((ctx) => {
+    /* nop */
+  })
+  .forEach((s) => {
+    createContainerElement(s.element)
+  })
 
   const d = document
 
@@ -48,22 +52,4 @@
     }
   }
 
-  function addContainerElements() {
-    let list = d.querySelectorAll('script')
-    list.forEach((i) => {
-      let a = i.getAttribute('src')
-      if (a && a.indexOf(scriptName) != -1) {
-        createContainerElement(i)
-      }
-    })
-    return
-  }
-
-  window.addEventListener('DOMContentLoaded', (event) => {
-    addContainerElements()
-  })
-
-  global.nopwopIncludePage = {
-    render: function() {}
-  }
 })(this)

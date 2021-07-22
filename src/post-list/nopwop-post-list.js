@@ -1,3 +1,4 @@
+import {ScriptTraverser} from '../common/script-traverser'
 import './nopwop-post-list.css'
 
 // import renderers
@@ -12,11 +13,13 @@ import { getPostListRelated } from './post-list-related'
 import { WpApiWrapper } from '../common/wpapi'
 
 (function() {
-  const scriptName = 'nopwop-post-list'
-
-  if ('nopwopPostList' in global) {
-    return;
-  }
+  let ctx = ScriptTraverser('nopwop-post-list', 'nopwopPostList')
+  .init((ctx) => {
+    /* nop */
+  })
+  .forEach((s) => {
+    handleScriptElement(s.element)
+  })
 
   const d = document
 
@@ -54,22 +57,4 @@ import { WpApiWrapper } from '../common/wpapi'
     })
   }
 
-  function addContainerElements() {
-    let list = d.querySelectorAll('script')
-    list.forEach((i) => {
-      let a = i.getAttribute('src')
-      if (a && a.indexOf(scriptName) != -1) {
-        handleScriptElement(i)
-      }
-    })
-    return
-  }
-
-  window.addEventListener('DOMContentLoaded', (event) => {
-    addContainerElements()
-  })
-
-  global.nopwopPostList = {
-    nop: function() {}
-  }
 })()

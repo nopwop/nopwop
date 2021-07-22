@@ -4,7 +4,7 @@ class PageCtx {
     this.scriptName = scriptName
   }
 
-  serachScriptTag(callback) {
+  searchScriptTag(callback) {
     let _self = this
     let list = document.querySelectorAll('script')
     list.forEach((i) => {
@@ -47,18 +47,20 @@ export const ScriptTraverser = function(scriptName, contextName) {
   }
 
   return {
-    init : function(callback) {
+    init : function(initCallback) {
       let ctx = null
       if (!(contextName in window)) {
         ctx = new PageCtx(scriptName)
-        callback && callback(ctx)
       }
 
       return {
-        forEach: function(callback) {
+        forEach: function(eachCallback) {
           if (ctx) { 
             window.addEventListener('DOMContentLoaded', (event) => {
-              ctx.serachScriptTag(function(scrElem) {
+              
+              initCallback && initCallback(ctx)
+
+              ctx.searchScriptTag(function(scrElem) {
                 let obj = {
                   args: get_args_array(scrElem), 
                   element: scrElem, 
@@ -66,7 +68,7 @@ export const ScriptTraverser = function(scriptName, contextName) {
                     scrElem.parentElement.insertBefore(elm, scrElem)
                   },
                 }
-                callback && callback(obj)
+                eachCallback && eachCallback(obj)
               })
             })
             window[contextName] = ctx
