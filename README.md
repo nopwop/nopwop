@@ -26,11 +26,11 @@ Search box with 'auto completion' for posts
 Generating *Table of Content* automatically based on Headings (i.e. H2,H3,H4.. tags) written in the page
 
 ## [syntax-highlight](./src/syntax-highlight)
-Decorating any souce code in pre code written in the page with syntax highlighter
+Decorating any source code in pre code written in the page with syntax highlighter
 
 ## [include-page](./src/include-page)
 Including static page contents to the any page using 'include-page' snippet.
 
 ## [accordion-ui](./src/accordion-ui)
-Rendering contets in subsequent blocks as *Accordion UI*
+Rendering contents in subsequent blocks as *Accordion UI*
 
