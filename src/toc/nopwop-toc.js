@@ -21,9 +21,9 @@ import './nopwop-toc.css'
       let mtop = decr.getPropertyValue('margin-top')
       let ptop = decr.getPropertyValue('padding-top')
 
-      let addional_shift = pxToNum(mtop) + pxToNum(ptop)
+      let additional_shift = pxToNum(mtop) + pxToNum(ptop)
       helm.style.marginTop = (-shift_pixel) + 'px'
-      helm.style.paddingTop = (shift_pixel + addional_shift) + 'px'
+      helm.style.paddingTop = (shift_pixel + additional_shift) + 'px'
     }
   }
 
@@ -82,7 +82,7 @@ import './nopwop-toc.css'
   }
 
   function renderToc(scr, harray) {
-    if (harray <= 0)
+    if (harray.length <= 0)
       return
 
     let top = createTocBox()
