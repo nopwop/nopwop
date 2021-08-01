@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='jp'>
+  <head>
+    <meta charset='utf-8'>
+    <title>nopwop - test for script traverser!</title>
+    <link rel='stylesheet' href='./script-traverser-test.css'>
+    
+    <!-- mocha framework -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.4/chai.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.css">
+
+  </head>
+  <body>
+
+    <!-- test dashboard js -->
+    <h1>The 1st item is here:</h1>
+    <script src='../build/script-traverser-test.bundle.js' hello='world' id='travers-test1'></script>
+
+    <h1>The 2nd item is here:</h1>
+    <script src='../build/script-traverser-test.bundle.js' prop1='a' prop2='b' prop3='c' id='travers-test2'></script>
+    
+    <h1>The 3rd item is here:</h1>
+    <script src='../build/script-traverser-test.bundle.js' dummy1='x' dummy2='y' dummy3='z'id='travers-test3'></script>
+
+    <h1>Mocha results:</h1>
+
+    <!-- page content -->
+    <div id='mocha' style='margin: 0px'></div>
+    <script type='text/javascript'>
+      (function(){
+        console.log('execute!')
+        mocha.setup('bdd')
+        let expect = chai.expect
+
+        describe('checing script parameters', function() {
+          
+          let args1, args2, args3
+          let d = document
+          before(function(){
+            args1 = JSON.parse(d.getElementById('test-id-travers-test1').textContent)
+            args2 = JSON.parse(d.getElementById('test-id-travers-test2').textContent)
+            args3 = JSON.parse(d.getElementById('test-id-travers-test3').textContent)
+          })
+
+          it('args1: first item should have...', function(done) {
+            expect(args1).to.have.property('hello');
+            expect(args1.hello).to.equal('world')
+            done()
+          })
+
+          it('args2: second item should have...', function(done) {
+            expect(args2).to.have.property('prop1');
+            expect(args2.prop1).to.equal('a')
+            done()
+          })          
+
+          it('args3: third item should have...', function(done) {
+            expect(args3).to.have.property('dummy1');
+            expect(args3.dummy1).to.equal('x')
+            done()
+          })          
+        })
+        mocha.run()
+      })()
+    </script>
+
+  </body>
+
+</html>

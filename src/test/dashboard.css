@@ -1,0 +1,10 @@
+
+.suite h1{
+    color: #592202;
+    background-color: #BACBD9;
+
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: #7B92A6;
+    padding-left: 0.75em;
+}

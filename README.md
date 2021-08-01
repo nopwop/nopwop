@@ -1,16 +1,36 @@
-### Hi there 👋
+# What's NOPWOP?
 
-<!--
-**nopwop/nopwop** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+NOPWOP stands for 'No plugin, without PHP' and it means that using NOPWOP javascript code snippets, you can easily customize or extend your WordPress web site with no WordPress Plugins or without complicated coding by PHP in server side.
 
-Here are some ideas to get you started:
+# Concept
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+NOPWOP snippets is *script* tag description like code below, which could insert special JavaScript codes into WordPress page. The insertion is accomplished by using *Custom HTML* block in WordPress editor screen.
+
+> \<script src='https://jsdelivr.com/....'>\</script>
+
+Therefor, what the author needs in order to customize or extend their WordPress site is just 'copy and paste' NOPWOP code, instead of installing WordPress Plugins.
+
+# Features
+
+## [post-list](./src/post-list)
+Generating 'post' or 'page' list under the condition below:
+- related posts with the page
+- post list related to category
+- post list related to tag
+- page list which has specific parent page
+
+## [search-box](./src/search-box)
+Search box with 'auto completion' for posts
+
+## [toc](./src/toc)
+Generating *Table of Content* automatically based on Headings (i.e. H2,H3,H4.. tags) written in the page
+
+## [syntax-highlight](./src/syntax-highlight)
+Decorating any source code in pre code written in the page with syntax highlighter
+
+## [include-page](./src/include-page)
+Including static page contents to the any page using 'include-page' snippet.
+
+## [accordion-ui](./src/accordion-ui)
+Rendering contents in subsequent blocks as *Accordion UI*
+

@@ -1,0 +1,70 @@
+.nopwop-search-box input[type='text'] {
+	font: 15px/24px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.8em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color:inherit;
+	border: 1px solid lightslategray;
+	border-radius: 4px;
+    outline: none;
+}
+
+.nopwop-search-box input[type='text']:focus {
+	border: 1px solid #5f5f5f;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(105, 105, 105, 0.5);
+}
+
+
+.nopwop-search-box input[type='text']:hover {
+    background: #f0f0f0;
+}
+
+.nopwop-search-box input[type='text']::placeholder {
+    color: #757575;
+}
+
+
+
+.nopwop-search-box button {
+    height: 10px;
+}
+
+/* below this line is for autocomplete.js */
+.autocomplete-suggestions {
+    text-align: left; 
+    cursor: default; 
+    border: 1px solid #ccc; 
+    border-top: 0; 
+    background: #fff; 
+    box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+
+    /* core styles should not be changed */
+    position: absolute;
+    display: none; 
+    z-index: 9999;
+    max-height: 254px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.autocomplete-suggestion { 
+    position: relative;
+    padding: 0 .6em;
+    line-height: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.02em;
+    color: #4f4f4f; 
+}
+.autocomplete-suggestion b {
+    font-weight: bolder;
+    color: #000000;
+}
+.autocomplete-suggestion.selected {
+    background: #f0f0f0; 
+}
+
