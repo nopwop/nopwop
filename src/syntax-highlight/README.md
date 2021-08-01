@@ -16,7 +16,7 @@ You can use it by two ways.
 
 This results all 'pre' and 'code' html tag(s) in any pages will be highlighted by it.
 
-## use it local page
+## use it in local page
 
 1. Add 'Custom HTML' block in 'Widget' configuration of WordPress
 2. Copy below code and paste into the Custom HTML block 
