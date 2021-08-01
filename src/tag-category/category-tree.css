@@ -1,0 +1,43 @@
+
+.nopwop-categories {
+  list-style-type: none;
+  padding:10px;
+}
+.nopwop-categories ul {
+  list-style-type: none;
+}
+
+.nopwop-categories .caret {
+  cursor: pointer;
+}
+
+.nopwop-categories .no-caret::before {
+  content: '\2010';
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.nopwop-categories .caret::before {
+  content: '\203A';
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.nopwop-categories .entry-count {
+  display: none;
+  float: right;
+  margin-right: 1em;
+}
+
+.nopwop-categories .caret-open::before {
+  transform: rotate(90deg);
+}
+
+.nopwop-categories .cat-children {
+  display: none;
+  font-size: 90%;
+}
+
+.nopwop-categories .active {
+  display: block;
+}

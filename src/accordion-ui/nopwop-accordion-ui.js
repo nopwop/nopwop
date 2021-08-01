@@ -1,12 +1,17 @@
-(function(global) {
-  const scriptName = 'nopwop-accordion-ui'
-  const styleSheetName = '/nopwop/src/accordion-ui/nopwop-accordion-ui.css'
+import {ScriptTraverser} from '../common/script-traverser'
+import styleSheet from './nopwop-accordion-ui.css?base64'
 
-  if ('nopwopAccordionUi' in global) {
-    return;
-  }
+(function() {
 
   const d = document
+
+  let ctx = ScriptTraverser('nopwop-accordion-ui', 'nopwopAccordionUi')
+  .init((ctx) => {
+    loadCSS(styleSheet)
+  })
+  .forEach((s) => {
+    setupAccordionUi(s.element)
+  })
 
   function loadCSS(styleSheet) {
     let list = d.getElementsByTagName('head')
@@ -75,24 +80,4 @@
     setupEvents(title, desc)
   }
 
-  function addContainerElements() {
-    let list = d.querySelectorAll('script')
-    list.forEach((i) => {
-      let a = i.getAttribute('src')
-      if (a && a.indexOf(scriptName) != -1) {
-        setupAccordionUi(i)
-      }
-    })
-    return
-  }
-
-  loadCSS(styleSheetName)
-
-  window.addEventListener('DOMContentLoaded', (event) => {
-    addContainerElements()
-  })
-
-  global.nopwopAccordionUi = {
-    render: function() {}
-  }
-})(this)
+})()

@@ -1,11 +1,12 @@
 import {ScriptTraverser} from '../common/script-traverser'
-import nopwop_search_box_css from './nopwop-search-box.css'
-import autocomplete_js from '!!raw-loader!../../lib/JavaScript-autoComplete-master/auto-complete.min.js'
+import nopwop_search_box_css from './nopwop-search-box.css?base64'
+import autocomplete_js from '../../lib/JavaScript-autoComplete-master/auto-complete.min.js?base64'
 
 (function() {
 
   // const autocomplete_js_url = '/nopwop/lib/JavaScript-autoComplete-master/auto-complete.js'
-  const autocomplete_js_url = URL.createObjectURL(new Blob([autocomplete_js], {type: 'text/javascript'}))
+  // const autocomplete_js_url = URL.createObjectURL(new Blob([autocomplete_js], {type: 'text/javascript'}))
+  const autocomplete_js_url = autocomplete_js
 
   const per_page = 30
   const d = document
