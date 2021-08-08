@@ -32,5 +32,8 @@ Decorating any source code in pre code written in the page with syntax highlight
 Including static page contents to the any page using 'include-page' snippet.
 
 ## [accordion-ui](./src/accordion-ui)
-Rendering contents in subsequent blocks as *Accordion UI*
+Rendering contents in subsequent blocks as *Accordion UI*.
+
+## [tag-category](./src/tag-category)
+Generating 'tag' list or 'category' list.
 
