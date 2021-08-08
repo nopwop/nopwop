@@ -10,6 +10,10 @@ NOPWOP snippets is *script* tag description like code below, which could insert 
 
 Therefor, what the author needs in order to customize or extend their WordPress site is just 'copy and paste' NOPWOP code, instead of installing WordPress Plugins.
 
+<div style='text-align : center'>
+<img src='./resources/コピペでsearch-box.gif' width='70%'>
+</div>
+
 # Features
 
 ## [post-list](./src/post-list)
